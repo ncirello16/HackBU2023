@@ -1,11 +1,12 @@
 import random
 import json
-
 import torch
 
+from trainData import trainTheData
 from model import NeuralNet
 from nltkUtils import BagOfWords, Tokenize
 
+trainTheData()
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 with open('bin/intents.json', 'r') as json_data:

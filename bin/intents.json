@@ -12,7 +12,7 @@
       ],
       "responses": [
         "Hey :-)",
-        "Hello, thanks for visiting",
+        "Hello, thanks for chatting",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
       ]
@@ -21,14 +21,14 @@
       "tag": "goodbye",
       "patterns": ["Bye", "See you later", "Goodbye"],
       "responses": [
-        "See you later, thanks for visiting",
+        "See you later, thanks for chatting",
         "Have a nice day",
-        "Bye! Come back again soon."
+        "Bye! Let's talk again soon."
       ]
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"],
       "responses": ["Happy to help!", "Any time!", "My pleasure"]
     },
     {
@@ -41,6 +41,23 @@
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
         "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "What are my options?",
+        "What can I choose from?",
+        "Can you give me some choices?",
+        "What are my choices?",
+        "Can you help me?",
+        "I need help",
+        "help"
+      ],
+      "responses": [
+        "Certainly, here are some options: Click dog, click cat, or keep talking to me",
+        "You can choose from the following: Click dog, click cat, or keep talking to me.",
+        "There are several options available: Click dog, click cat, or keep talking to me"
       ]
     }
   ]
