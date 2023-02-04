@@ -23,16 +23,11 @@ def BagOfWords(tokenizedSentence, allWords):
     # words = ["hi", "hello", "I", "you", "bye", "thank", "cool"]
     # BOF =   [ 0,     1,     0,    1,      0,      0,      0]
     tokenizedSentence = [Stem(word) for word in tokenizedSentence]
-    bag = np.zeros(len(allWords), dtype=np.float32)
+    bagOfWords = np.zeros(len(allWords), dtype=np.float32)
     for idx, word, in enumerate(allWords):
         if word in tokenizedSentence:
-            bag[idx] = 1.0
+            bagOfWords[idx] = 1.0
 
-    return bag
+    return bagOfWords
 
-
-sentence = ["hello", "how", "are", "you"]
-words = ["hi", "hello", "I", "you", "bye", "thank", "cool"]
-bag = BagOfWords(sentence, words)
-print(bag)
 
