@@ -22,6 +22,7 @@ class Window(QMainWindow, Ui_MainWindow):
         super().__init__(parent)
         self.whichOne = "human"
         self.setupUi(self)
+        self.player = QMediaPlayer()
         self.init()
 
     def doggy(self):
@@ -64,7 +65,8 @@ class Window(QMainWindow, Ui_MainWindow):
             self.output_lineEdit.append(output)
 
     def playAudioFile(self):
-        full_file_path = os.path.join(os.getcwd(), 'test.m4a')
+        full_file_path = os.path.join(os.getcwd(),
+                                      'Sound/Dog Barking Sound Effects _ No Copyright Sound Effects Free To Use.mp3')
         url = QUrl.fromLocalFile(full_file_path)
         content = QMediaContent(url)
 
