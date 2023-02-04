@@ -54,19 +54,21 @@ class Window(QMainWindow, Ui_MainWindow):
         if self.whichOne == "doggy":
             output += "Bark! Bark!"
             self.output_lineEdit.append(output)
-            self.playAudioFile()
+            self.playAudioFile('Dog Barking Sound Effects _ No Copyright Sound Effects Free To Use.mp3')
 
         elif self.whichOne == "cat":
             output += "Meow! Meow!"
             self.output_lineEdit.append(output)
+            self.playAudioFile('Cat meow sound effect.mp3')
 
         elif self.whichOne == "human":
             output += "something something"
             self.output_lineEdit.append(output)
 
-    def playAudioFile(self):
+    def playAudioFile(self, file):
+
         full_file_path = os.path.join(os.getcwd(),
-                                      'Sound/Dog Barking Sound Effects _ No Copyright Sound Effects Free To Use.mp3')
+                                      file)
         url = QUrl.fromLocalFile(full_file_path)
         content = QMediaContent(url)
 
