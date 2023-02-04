@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1af879a4-1cfe-45b1-a43f-a8296b220d1b" name="Changes" comment="We won patch 2023 -- Winning">
-      <change afterPath="$PROJECT_DIR$/Dog Barking Sound Effects _ No Copyright Sound Effects Free To Use.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libvlc.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParjanFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParjanFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jiyun.py" beforeDir="false" afterPath="$PROJECT_DIR$/jiyun.py" afterDir="false" />
-    </list>
+    <list default="true" id="1af879a4-1cfe-45b1-a43f-a8296b220d1b" name="Changes" comment="Test Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675534083067</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Test Commit">
+      <created>1675545364564</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675545364564</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +137,7 @@
     <MESSAGE value="We won" />
     <MESSAGE value="We won patch 2023" />
     <MESSAGE value="We won patch 2023 -- Winning" />
-    <option name="LAST_COMMIT_MESSAGE" value="We won patch 2023 -- Winning" />
+    <MESSAGE value="Test Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Commit" />
   </component>
 </project>
