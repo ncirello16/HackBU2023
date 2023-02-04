@@ -19,8 +19,25 @@ from ui.chatBot import Ui_MainWindow
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.whichOne = "human"
         self.setupUi(self)
         self.init()
+
+    def doggy(self):
+        self.dog_switch.setEnabled(False)
+        self.cat_swItch.setEnabled(True)
+        self.human_switch.setEnabled(True)
+        self.whichOne = "doggy"
+    def cat(self):
+        self.cat_swItch.setEnabled(False)
+        self.dog_switch.setEnabled(True)
+        self.human_switch.setEnabled(True)
+        self.whichOne = "cat"
+    def human(self):
+        self.human_switch.setEnabled(False)
+        self.dog_switch.setEnabled(True)
+        self.cat_swItch.setEnabled(True)
+        self.whichOne = "human"
 
     def take_input_and_output(self):
         output = "You: "
@@ -28,8 +45,29 @@ class Window(QMainWindow, Ui_MainWindow):
 
         self.output_lineEdit.append(output)
         self.input_lineEdit.clear()
+        self.botOutput()
+
+    def botOutput(self):
+        output = f"{self.whichOne}: "
+        if self.whichOne == "doggy":
+            output += "Bark! Bark!"
+            self.output_lineEdit.append(output)
+
+        elif self.whichOne == "cat":
+            output += "Meow! Meow!"
+            self.output_lineEdit.append(output)
+
+        elif self.whichOne == "human":
+            output += "something something"
+            self.output_lineEdit.append(output)
+
     def init(self):
+        self.human_switch.setEnabled(False)
+
         self.send.clicked.connect(self.take_input_and_output)
+        self.dog_switch.clicked.connect(self.doggy)
+        self.cat_swItch.clicked.connect(self.cat)
+        self.human_switch.clicked.connect(self.human)
         self.input_lineEdit.returnPressed.connect(self.take_input_and_output)
 
 
