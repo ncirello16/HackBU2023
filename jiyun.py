@@ -1,7 +1,8 @@
-import sys
+import sys, os
 from PyQt5.QtWidgets import (QApplication,QMainWindow, QPushButton,QWidget, QLineEdit,
                              QRadioButton,QCommandLinkButton, QMessageBox, QInputDialog)
-from PyQt5.QtCore import QObject, QThread, pyqtSignal, QProcess
+from PyQt5.QtCore import QObject, QThread, pyqtSignal, QProcess, QUrl
+from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 
 from ui.chatBot import Ui_MainWindow
 
@@ -52,6 +53,7 @@ class Window(QMainWindow, Ui_MainWindow):
         if self.whichOne == "doggy":
             output += "Bark! Bark!"
             self.output_lineEdit.append(output)
+            self.playAudioFile()
 
         elif self.whichOne == "cat":
             output += "Meow! Meow!"
@@ -60,6 +62,14 @@ class Window(QMainWindow, Ui_MainWindow):
         elif self.whichOne == "human":
             output += "something something"
             self.output_lineEdit.append(output)
+
+    def playAudioFile(self):
+        full_file_path = os.path.join(os.getcwd(), 'test.m4a')
+        url = QUrl.fromLocalFile(full_file_path)
+        content = QMediaContent(url)
+
+        self.player.setMedia(content)
+        self.player.play()
 
     def init(self):
         self.human_switch.setEnabled(False)
