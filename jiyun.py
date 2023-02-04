@@ -7,3 +7,4 @@ def take_input_and_output(input_prompt_text, output_location):
         with open(output_location, 'w') as f:
             f.write(text)
     app.exec_()
+
