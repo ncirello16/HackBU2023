@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 root = Tk()
 root.title("Chatbot")
 
@@ -65,5 +66,7 @@ send = Button(root, text="Send", font=FONT_BOLD, bg=BG_GRAY,
               command=send).grid(row=2, column=1)
 
 root.mainloop()
+
+
 
 
