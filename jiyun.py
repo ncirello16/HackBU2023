@@ -54,12 +54,12 @@ class Window(QMainWindow, Ui_MainWindow):
         if self.whichOne == "doggy":
             output += "Bark! Bark!"
             self.output_lineEdit.append(output)
-            self.playAudioFile('Dog Barking Sound Effects _ No Copyright Sound Effects Free To Use.mp3')
+            self.playAudioFile('Sound/Dog Barking Sound Effects _ No Copyright Sound Effects Free To Use.mp3')
 
         elif self.whichOne == "cat":
             output += "Meow! Meow!"
             self.output_lineEdit.append(output)
-            self.playAudioFile('Cat meow sound effect.mp3')
+            self.playAudioFile('Sound/Cat meow sound effect.mp3')
 
         elif self.whichOne == "human":
             output += "something something"
