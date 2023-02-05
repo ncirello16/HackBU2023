@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>874</width>
-    <height>506</height>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,6 +21,21 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
@@ -83,7 +101,8 @@ color: rgb(227, 227, 227);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(84, 88, 97);</string>
             </property>
             <property name="text">
              <string>Dog</string>
@@ -98,7 +117,8 @@ color: rgb(227, 227, 227);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(84, 88, 97);</string>
             </property>
             <property name="text">
              <string>Cat</string>
@@ -113,7 +133,7 @@ color: rgb(227, 227, 227);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true">background-color: rgb(84, 88, 97);</string>
             </property>
             <property name="text">
              <string>Human</string>
@@ -143,7 +163,8 @@ color: rgb(227, 227, 227);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(84, 88, 97);</string>
           </property>
           <property name="text">
            <string>send</string>
@@ -155,16 +176,6 @@ color: rgb(227, 227, 227);</string>
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>874</width>
-     <height>21</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
