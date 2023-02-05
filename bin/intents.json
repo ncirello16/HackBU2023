@@ -184,10 +184,14 @@
     {
       "tag": "Praise",
       "patterns": [
-        "That was good"
-
+        "That was good",
+        "You are cool",
+        "I like you",
+        "you are smart",
+        "You are interesting"
       ],
       "responses": [
+        "Thank you :)"
       ]
     },
     {
@@ -205,6 +209,18 @@
         "Certainly, here are some options: Click dog, click cat, or keep talking to me",
         "You can choose from the following: Click dog, click cat, or keep talking to me.",
         "There are several options available: Click dog, click cat, or keep talking to me"
+      ]
+    },
+    {
+      "tag": "botFunctions",
+      "patterns": [
+        "What can you do?",
+        "what are your functions",
+        "Do something.",
+        "Can you do something for me?"
+      ],
+      "responses": [
+        "I can tell you a joke, or tell you a random fact. Or you can talk to the dog or cat :)"
       ]
     }
   ]
