@@ -7,6 +7,7 @@ from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 
 from ui.chatBot import Ui_MainWindow
 import chat
+import find
 
 
 # def take_input_and_output(input_prompt_text, output_location):
@@ -43,23 +44,36 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.init()
 
     def doggy(self):
-        self.dog_switch.setEnabled(False)
+        self.dog_switch_3.setEnabled(False)
         self.cat_swItch.setEnabled(True)
         self.human_switch.setEnabled(True)
+        self.dic_switch.setEnabled(True)
         self.whichOne = "doggy"
+        self.output_lineEdit.clear()
 
     def cat(self):
         self.cat_swItch.setEnabled(False)
-        self.dog_switch.setEnabled(True)
+        self.dog_switch_3.setEnabled(True)
         self.human_switch.setEnabled(True)
+        self.dic_switch.setEnabled(True)
         self.whichOne = "cat"
+        self.output_lineEdit.clear()
 
     def human(self):
         self.human_switch.setEnabled(False)
-        self.dog_switch.setEnabled(True)
+        self.dog_switch_3.setEnabled(True)
         self.cat_swItch.setEnabled(True)
+        self.dic_switch.setEnabled(True)
         self.whichOne = "human"
+        self.output_lineEdit.clear()
 
+    def dic(self):
+        self.dic_switch.setEnabled(False)
+        self.dog_switch_3.setEnabled(True)
+        self.cat_swItch.setEnabled(True)
+        self.human_switch.setEnabled(True)
+        self.whichOne = "Dic"
+        self.output_lineEdit.clear()
     def take_input_and_output(self):
         inp = self.input_lineEdit.text()
         output = "You: "
@@ -84,6 +98,10 @@ class chatting(QMainWindow, Ui_MainWindow):
             output = chat.gettingInput(inp)
             self.output_lineEdit.append(output)
 
+        elif self.whichOne == "Dic":
+            output = find.Diction(inp)
+            self.output_lineEdit.append(output)
+
     def playAudioFile(self, file):
 
         full_file_path = os.path.join(os.getcwd(),
@@ -98,9 +116,10 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.human_switch.setEnabled(False)
 
         self.send.clicked.connect(self.take_input_and_output)
-        self.dog_switch.clicked.connect(self.doggy)
+        self.dog_switch_3.clicked.connect(self.doggy)
         self.cat_swItch.clicked.connect(self.cat)
         self.human_switch.clicked.connect(self.human)
+        self.dic_switch.clicked.connect(self.dic)
         self.input_lineEdit.returnPressed.connect(self.take_input_and_output)
 
 
@@ -122,7 +141,7 @@ class MyBar(QWidget):
         self.pushButton_3.setStyleSheet("background-color: rgb(32, 34, 37);"
                                         "color: red;")
 
-        self.pushButton = QPushButton("-")
+        self.pushButton = QPushButton("_")
         self.pushButton.clicked.connect(self.btn_min_clicked)
         self.pushButton.setFixedSize(btn_size, btn_size)
         self.pushButton.setStyleSheet("background-color: rgb(32, 34, 37);"
