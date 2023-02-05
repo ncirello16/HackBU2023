@@ -105,7 +105,8 @@
         "Not too bad, how about you?",
         "Can't complain, how about you?",
         "Pretty good, how about you?",
-        "I'm fantastic, thanks!"
+        "I'm fantastic, thanks!",
+        "I am doing good"
       ],
       "responses": [
         "That's great!",
@@ -118,6 +119,31 @@
         "That's fantastic!",
         "Glad to hear you're doing well!",
         "Awesome, keep it up!"
+      ]
+    },
+    {
+      "tag": "userIsDoingBad",
+      "patterns": [
+        "I'm not doing so great",
+        "I'm having a rough time",
+        "Things are not going well for me",
+        "I'm feeling down",
+        "Life's been a bit of a struggle lately",
+        "I'm not in a good place right now",
+        "I've been struggling lately",
+        "It's been a tough period for me",
+        "I'm not feeling very positive at the moment",
+        "I've hit a bit of a low point"
+      ],
+      "responses": [
+        "I'm sorry to hear that.",
+        "That's tough. I'm here for you if you need to talk.",
+        "It's okay to not be okay. Just take it one day at a time.",
+        "I hope things get better for you soon.",
+        "Remember that this too shall pass.",
+        "I can tell you a joke to brighten your day?",
+        "Let me tell you a joke to take your mind off things.",
+        "You don't have to face this alone. I'm here for you."
       ]
     },
     {
