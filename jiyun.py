@@ -6,7 +6,6 @@ from PyQt5.QtCore import QObject, QThread, pyqtSignal, QProcess, QUrl, Qt, QPoin
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 
 from ui.chatBot import Ui_MainWindow
-from ui.myBar import Ui_Frame
 import chat
 
 
@@ -40,6 +39,7 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.whichOne = "human"
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint)
+        self.player = QMediaPlayer()
         self.init()
 
     def doggy(self):
@@ -104,7 +104,7 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.input_lineEdit.returnPressed.connect(self.take_input_and_output)
 
 
-class MyBar(QWidget, Ui_Frame):
+class MyBar(QWidget):
 
     def __init__(self, parent):
         super(MyBar, self).__init__()
