@@ -21,13 +21,7 @@
         "How's it going?",
         "How have you been?",
         "How are things with you?",
-        "How are you feeling?",
-        "What's up?",
-        "How are things?",
-        "How's everything?",
-        "How have you been doing?",
-        "How's life treating you?",
-        "How's your day going so far?"
+        "How are you feeling?"
       ],
       "responses": [
         "I'm good, thanks.",
@@ -49,11 +43,7 @@
         "What's the matter?",
         "What's bothering you?",
         "Something on your mind?",
-        "What's the issue?",
-        "What's the problem?",
-        "What's happened?",
         "What's wrong?",
-        "What's going on?",
         "What happened?"
     ],
       "responses": [
@@ -75,13 +65,7 @@
         "I'm sorry.",
         "My apologies.",
         "I apologize.",
-        "Pardon me.",
-        "Excuse me.",
-        "Sorry about that.",
-        "My bad.",
-        "Forgive me.",
-        "I feel terrible.",
-        "I regret it."
+        "Pardon me."
       ],
       "responses": [
         "It's okay.",
@@ -102,11 +86,7 @@
         "I'm good, thanks.",
         "I'm doing well, thanks for asking.",
         "Just fine, thanks.",
-        "Not too bad, how about you?",
-        "Can't complain, how about you?",
-        "Pretty good, how about you?",
-        "I'm fantastic, thanks!",
-        "I am doing good"
+        "Pretty good, how about you?"
       ],
       "responses": [
         "That's great!",
@@ -127,13 +107,7 @@
         "I'm not doing so great",
         "I'm having a rough time",
         "Things are not going well for me",
-        "I'm feeling down",
-        "Life's been a bit of a struggle lately",
-        "I'm not in a good place right now",
-        "I've been struggling lately",
-        "It's been a tough period for me",
-        "I'm not feeling very positive at the moment",
-        "I've hit a bit of a low point"
+        "I'm feeling down"
       ],
       "responses": [
         "I'm sorry to hear that.",
@@ -148,7 +122,8 @@
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye",
+      "patterns": [
+        "Bye",
         "See you later",
         "Goodbye"
       ],
@@ -160,15 +135,18 @@
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"],
+      "patterns": ["Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thanks a lot!"
+      ],
       "responses": ["Happy to help!", "Any time!", "My pleasure"]
     },
     {
       "tag": "funny",
       "patterns": [
         "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
+        "Tell me something funny!"
       ],
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
@@ -190,10 +168,7 @@
       "patterns": [
         "That was good",
         "You are cool",
-        "I like you",
-        "you are smart",
-        "You are interesting",
-        "That's cool"
+        "I like you"
       ],
       "responses": [
         "Thank you :)"
@@ -205,9 +180,6 @@
         "What are my options?",
         "What can I choose from?",
         "Can you give me some choices?",
-        "What are my choices?",
-        "Can you help me?",
-        "I need help",
         "help"
       ],
       "responses": [
@@ -236,11 +208,7 @@
         "Surprise me with some knowledge",
         "Educate me with a random piece of information",
         "Hit me with a unique fact",
-        "Tell me something I may not know",
-        "Spill a random fact",
-        "I could use a random tidbit of information",
-        "Amaze me with a surprising fact",
-        "Let's see what you've got, give me a random fact"
+        "fact"
       ],
       "responses": [
         "The shortest war in history lasted only 38 minutes, between Britain and Zanzibar on 27 August 1896.",
