@@ -222,6 +222,33 @@
       "responses": [
         "I can tell you a joke, or tell you a random fact. Or you can talk to the dog or cat :)"
       ]
+    },
+    {
+      "tag": "facts",
+      "patterns": [
+        "Give me something interesting to know",
+        "Share a fun fact with me",
+        "Surprise me with some knowledge",
+        "Educate me with a random piece of information",
+        "Hit me with a unique fact",
+        "Tell me something I may not know",
+        "Spill a random fact",
+        "I could use a random tidbit of information",
+        "Amaze me with a surprising fact",
+        "Let's see what you've got, give me a random fact"
+      ],
+      "responses": [
+        "The shortest war in history lasted only 38 minutes, between Britain and Zanzibar on 27 August 1896.",
+        "A group of flamingos is called a 'flamboyance'.",
+        "The Great Barrier Reef off the coast of Australia is the world's largest structure made by living organisms.",
+        "The world's largest snowflake on record was 15 inches wide and 8 inches thick.",
+        "The word 'nerd' was first coined by Dr. Seuss in his book 'If I Ran the Zoo'.",
+        "The Eiffel Tower grows about 6 inches during the summer due to the heat expanding its metal.",
+        "The average person spends 6 months of their life waiting for red lights to turn green.",
+        "The first recorded game of baseball was played in 1846 in Hoboken, New Jersey.",
+        "The study of laughter is called gelotology.",
+        "The shortest presidential term in history was William Henry Harrison, who served for only 31 days before he passed away."
+    ]
     }
   ]
 }
