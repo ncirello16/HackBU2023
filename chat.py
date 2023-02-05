@@ -28,6 +28,7 @@ model.eval()
 botName = "James"
 print("Let's chat! (type 'quit' to exit)")
 
+
 def gettingInput(getinput):
     # sentence = "do you use credit cards?"
     sentence = getinput
@@ -52,5 +53,5 @@ def gettingInput(getinput):
                 out = f"{botName}: {random.choice(intent['responses'])}"
                 return out
     else:
-        out =  f"{botName}: I do not understand..."
+        out = f"{botName}: I do not understand..."
         return out
