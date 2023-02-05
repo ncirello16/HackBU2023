@@ -1,12 +1,13 @@
 import random
 import json
 import torch
-
+import os.path
 from trainData import trainTheData
 from model import NeuralNet
 from nltkUtils import BagOfWords, Tokenize
 
-trainTheData()
+if not (os.path.exists('bin/data.pth')):
+    trainTheData()
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 with open('bin/intents.json', 'r') as json_data:
@@ -26,14 +27,13 @@ model = NeuralNet(inputSize, hiddenSize, outputSize).to(device)
 model.load_state_dict(modelState)
 model.eval()
 
-botName = "James"
+botName = "ChatBot"
 print("Let's chat! (type 'quit' to exit)")
-
-def gettingInput(getinput):
+while True:
     # sentence = "do you use credit cards?"
-    sentence = getinput
+    sentence = input("You: ")
     if sentence == "quit":
-        return None
+        break
 
     sentence = Tokenize(sentence)
     x = BagOfWords(sentence, allWords)
@@ -50,8 +50,6 @@ def gettingInput(getinput):
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                out = f"{botName}: {random.choice(intent['responses'])}"
-                return out
+                print(f"{botName}: {random.choice(intent['responses'])}")
     else:
-        out =  f"{botName}: I do not understand..."
-        return out
+        print(f"{botName}: I do not understand...")
