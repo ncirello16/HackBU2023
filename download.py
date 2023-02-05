@@ -1,5 +1,5 @@
 import pip
-packages = ['Pyqt5', 'nltk', 'torch', 'numpy', 'json', 'selenium', 'webdriver_manager']
+packages = ['Pyqt5', 'nltk', 'torch', 'numpy', 'json', 'selenium', 'webdriver_manager','beautifulsoup4']
 
 
 def import_or_install(package):
