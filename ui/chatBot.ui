@@ -95,6 +95,22 @@ background-color: rgb(84, 88, 97);</string>
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="meal_switch">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(84, 88, 97);</string>
+            </property>
+            <property name="text">
+             <string>Meal</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="cat_swItch">
             <property name="font">
              <font>

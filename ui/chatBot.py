@@ -61,6 +61,14 @@ class Ui_MainWindow(object):
 "background-color: rgb(84, 88, 97);")
         self.dic_switch.setObjectName("dic_switch")
         self.verticalLayout_2.addWidget(self.dic_switch)
+        self.meal_switch = QtWidgets.QPushButton(self.centralwidget)
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.meal_switch.setFont(font)
+        self.meal_switch.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"background-color: rgb(84, 88, 97);")
+        self.meal_switch.setObjectName("meal_switch")
+        self.verticalLayout_2.addWidget(self.meal_switch)
         self.cat_swItch = QtWidgets.QPushButton(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(13)
@@ -109,6 +117,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.dic_switch.setText(_translate("MainWindow", "Dic"))
+        self.meal_switch.setText(_translate("MainWindow", "Meal"))
         self.cat_swItch.setText(_translate("MainWindow", "Cat"))
         self.dog_switch_3.setText(_translate("MainWindow", "Dog"))
         self.human_switch.setText(_translate("MainWindow", "Human"))

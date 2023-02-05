@@ -8,6 +8,7 @@ from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from ui.chatBot import Ui_MainWindow
 import chat
 import find
+import diningAccountBot
 
 
 # def take_input_and_output(input_prompt_text, output_location):
@@ -34,6 +35,8 @@ class MainWindow(QWidget):
         self.pressing = False
 
 
+
+
 class chatting(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -42,13 +45,18 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.player = QMediaPlayer()
         self.init()
+        self.ps = False
 
     def doggy(self):
         self.dog_switch_3.setEnabled(False)
         self.cat_swItch.setEnabled(True)
         self.human_switch.setEnabled(True)
         self.dic_switch.setEnabled(True)
+        self.meal_switch.setEnabled(True)
+        self.input_lineEdit.setPlaceholderText("Please Say HI to Dog")
         self.whichOne = "doggy"
+        self.input_lineEdit.setEchoMode(QLineEdit.Normal)
+        self.ps = False
         self.output_lineEdit.clear()
 
     def cat(self):
@@ -56,7 +64,11 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.dog_switch_3.setEnabled(True)
         self.human_switch.setEnabled(True)
         self.dic_switch.setEnabled(True)
+        self.meal_switch.setEnabled(True)
+        self.input_lineEdit.setPlaceholderText("Please Say HI to Cat")
+        self.input_lineEdit.setEchoMode(QLineEdit.Normal)
         self.whichOne = "cat"
+        self.ps = False
         self.output_lineEdit.clear()
 
     def human(self):
@@ -64,7 +76,11 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.dog_switch_3.setEnabled(True)
         self.cat_swItch.setEnabled(True)
         self.dic_switch.setEnabled(True)
+        self.meal_switch.setEnabled(True)
+        self.input_lineEdit.setPlaceholderText("Please ask Something to James")
+        self.input_lineEdit.setEchoMode(QLineEdit.Normal)
         self.whichOne = "human"
+        self.ps = False
         self.output_lineEdit.clear()
 
     def dic(self):
@@ -72,15 +88,38 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.dog_switch_3.setEnabled(True)
         self.cat_swItch.setEnabled(True)
         self.human_switch.setEnabled(True)
+        self.meal_switch.setEnabled(True)
         self.whichOne = "Dic"
+        self.input_lineEdit.setPlaceholderText("Please type one word. DicBot will define it")
+        self.input_lineEdit.setEchoMode(QLineEdit.Normal)
         self.output_lineEdit.clear()
+        self.ps = False
+
+    def meal(self):
+        self.meal_switch.setEnabled(False)
+        self.dog_switch_3.setEnabled(True)
+        self.cat_swItch.setEnabled(True)
+        self.human_switch.setEnabled(True)
+        self.dic_switch.setEnabled(True)
+        self.whichOne = "meal"
+        self.input_lineEdit.setEchoMode(QLineEdit.Normal)
+        self.output_lineEdit.clear()
+
+        if(self.ps == False):
+            self.input_lineEdit.setPlaceholderText("Please Type ID:")
+            self.output_lineEdit.append("Please Type ID:")
     def take_input_and_output(self):
-        inp = self.input_lineEdit.text()
-        output = "You: "
-        output += inp
-        self.output_lineEdit.append(output)
-        self.botOutput(inp)
-        self.input_lineEdit.clear()
+        if self.whichOne != "meal":
+            inp = self.input_lineEdit.text()
+            output = "You: "
+            output += inp
+            self.output_lineEdit.append(output)
+            self.botOutput(inp)
+            self.input_lineEdit.clear()
+        else:
+            inp = self.input_lineEdit.text()
+            self.botOutput(inp)
+            self.input_lineEdit.clear()
 
     def botOutput(self, inp=None):
         output = f"{self.whichOne}: "
@@ -102,6 +141,37 @@ class chatting(QMainWindow, Ui_MainWindow):
             output = find.Diction(inp)
             self.output_lineEdit.append(output)
 
+        elif self.whichOne == "meal":
+            if(self.ps == False):
+                self.id = inp
+                self.output_lineEdit.append("Please Type Password:")
+                self.input_lineEdit.setPlaceholderText("Please Type Password:")
+                self.input_lineEdit.setEchoMode(QLineEdit.Password)
+                self.ps = True
+
+            else:
+                try:
+                    ps = self.input_lineEdit.text()
+                    moneyLeft = diningAccountBot.parseBingWebpage(self.id,ps)
+                    ps = ""
+                    self.id = ""
+                    self.ps = False
+                    output = diningAccountBot.getMoneyPerDay(moneyLeft)
+                    self.input_lineEdit.setEchoMode(QLineEdit.Normal)
+                    output = f'You have {output[0]} money left on your account...\n' \
+                             f'You can spend "{output[1]}" a day\n---------------------\nPlease Type ID:'
+                    print(f'You have {output[0]} money left on your account...')
+                    print(f'You can spend "{output[1]}" a day\n---------------------\nPlease Type ID:')
+                    self.input_lineEdit.setPlaceholderText("Please Type ID:")
+                    self.output_lineEdit.append(output)
+
+                except:
+                    self.output_lineEdit.append("Something went to wrong...\n---------------------\nPlease Type ID:")
+                    self.input_lineEdit.setPlaceholderText("Please Type ID:")
+                    self.ps = False
+                    self.input_lineEdit.setEchoMode(QLineEdit.Normal)
+
+
     def playAudioFile(self, file):
 
         full_file_path = os.path.join(os.getcwd(),
@@ -120,7 +190,10 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.cat_swItch.clicked.connect(self.cat)
         self.human_switch.clicked.connect(self.human)
         self.dic_switch.clicked.connect(self.dic)
+        self.meal_switch.clicked.connect(self.meal)
         self.input_lineEdit.returnPressed.connect(self.take_input_and_output)
+        self.input_lineEdit.setPlaceholderText("Please ask Something to James")
+
 
 
 class MyBar(QWidget):
@@ -131,7 +204,7 @@ class MyBar(QWidget):
         print(self.parent.width())
         self.layout = QHBoxLayout()
         self.layout.setContentsMargins(0, 0, 0, 0)
-        self.title = QLabel("Chat Bot")
+        self.title = QLabel("Bot Hub")
         self.setStyleSheet("background-color: rgb(47, 49, 54);")
         btn_size = 35
 

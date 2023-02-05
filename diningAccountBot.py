@@ -13,30 +13,36 @@ def getDaysLeft():
     return totalDaysLeft
 
 
-def parseBingWebpage():
-    username = input("userName: ")
-    password = input("passWord: ")
+def parseBingWebpage(id,ps):
+    username = id
+    password = ps
 
     url = "https://bing.campuscardcenter.com/ch/login.html"
-
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    op = webdriver.ChromeOptions()
+    op.add_argument('headless')
+    driver = webdriver.Chrome(options=op, service=Service(ChromeDriverManager().install()))
     driver.get(url)
 
     driver.find_element("name", "username").send_keys(username)
     driver.find_element("name", "password").send_keys(password)
     driver.find_element("name", "action").click()
-    time.sleep(1)
+    time.sleep(2)
     moneyLeft = driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/table[2]/tbody/tr[5]/td[4]/div')
+    if(moneyLeft.text == "$ 0.00"):
+        moneyLeft = driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/table[2]/tbody/tr[4]/td[4]/div')
+
+
     return moneyLeft
 
 
 def getMoneyPerDay(totalMoneyLeft):
+
     totalDaysLeft = getDaysLeft()
 
-    print(f'You have {totalMoneyLeft.text} money left on your account...')
     formattedFinalTotal = "{:.2f}".format(float(totalMoneyLeft.text[2:]) / totalDaysLeft)
-    print(f'You can spend "{formattedFinalTotal}" a day')
+    output = [totalMoneyLeft.text,formattedFinalTotal]
+    return output
 
-
-moneyLeft = parseBingWebpage()
-getMoneyPerDay(moneyLeft)
+if __name__ == "__main__":
+    moneyLeft = parseBingWebpage('adwlkj','dawklj')
+    getMoneyPerDay(moneyLeft)
