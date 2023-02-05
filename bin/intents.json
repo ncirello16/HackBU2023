@@ -5,30 +5,136 @@
       "patterns": [
         "Hi",
         "Hey",
-        "How are you",
         "Is anyone there?",
-        "Hello",
-        "Good day"
+        "Hello"
       ],
       "responses": [
         "Hey :-)",
-        "Hello, thanks for visiting",
+        "Hello, thanks for chatting",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
       ]
     },
     {
-      "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
+      "tag": "howareyou",
+      "patterns": [
+        "How's it going?",
+        "How have you been?",
+        "How are things with you?",
+        "How are you feeling?",
+        "What's up?",
+        "How are things?",
+        "How's everything?",
+        "How have you been doing?",
+        "How's life treating you?",
+        "How's your day going so far?"
+      ],
       "responses": [
-        "See you later, thanks for visiting",
+        "I'm good, thanks.",
+        "I'm doing well, thanks for asking.",
+        "Just fine, thanks.",
+        "Not too bad, how about you?",
+        "Can't complain, how about you?",
+        "Pretty good, how about you?",
+        "So-so, how are you?",
+        "I'm fantastic, thanks!",
+        "Could be better, but I'm hanging in there. How about you?",
+        "I've been better, but I'm managing."
+      ]
+    },
+    {
+      "tag": "whatswrong",
+      "patterns": [
+        "Is something bothering you?",
+        "What's the matter?",
+        "What's bothering you?",
+        "Something on your mind?",
+        "What's the issue?",
+        "What's the problem?",
+        "What's happened?",
+        "What's wrong?",
+        "What's going on?",
+        "What happened?"
+    ],
+      "responses": [
+        "Nothing, just tired.",
+        "Just a long day, thanks for asking.",
+        "Nothing much, how about you?",
+        "Just feeling overwhelmed, but I'll be okay.",
+        "Just some stress at work, nothing to worry about.",
+        "A family member is going through a tough time.",
+        "I'm just feeling a bit down today.",
+        "Just some personal stuff I'm dealing with.",
+        "Had a fight with a friend, but we'll work it out.",
+        "Just feeling a bit under the weather."
+      ]
+    },
+    {
+      "tag": "sorry",
+      "patterns": [
+        "I'm sorry.",
+        "My apologies.",
+        "I apologize.",
+        "Pardon me.",
+        "Excuse me.",
+        "Sorry about that.",
+        "My bad.",
+        "Forgive me.",
+        "I feel terrible.",
+        "I regret it."
+      ],
+      "responses": [
+        "It's okay.",
+        "No problem.",
+        "Don't worry about it.",
+        "I forgive you.",
+        "No need to apologize.",
+        "It happens to the best of us.",
+        "It's not a big deal.",
+        "No harm done.",
+        "No worries.",
+        "That's alright."
+      ]
+    },
+    {
+      "tag": "userIsDoingGood",
+      "patterns": [
+        "I'm good, thanks.",
+        "I'm doing well, thanks for asking.",
+        "Just fine, thanks.",
+        "Not too bad, how about you?",
+        "Can't complain, how about you?",
+        "Pretty good, how about you?",
+        "I'm fantastic, thanks!"
+      ],
+      "responses": [
+        "That's great!",
+        "Glad to hear it!",
+        "Awesome!",
+        "That's good news!",
+        "I'm happy for you!",
+        "Fantastic!",
+        "Super!",
+        "That's fantastic!",
+        "Glad to hear you're doing well!",
+        "Awesome, keep it up!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye",
+        "See you later",
+        "Goodbye"
+      ],
+      "responses": [
+        "See you later, thanks for chatting",
         "Have a nice day",
-        "Bye! Come back again soon."
+        "Bye! Let's talk again soon."
       ]
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"],
       "responses": ["Happy to help!", "Any time!", "My pleasure"]
     },
     {
@@ -40,7 +146,39 @@
       ],
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
+        "What did the buffalo say when his son left for college? Bison.",
+        "My wife said I should do lunges to stay in shape. That would be a big step forward.",
+        "Singing in the shower is fun until you get soap in your mouth. Then it's a soap opera.",
+        "I asked my dog what's two minus two. He said nothing.",
+        "Why can't a nose be 12 inches long? Because then it would be a foot.",
+        "Shout out to my fingers. I can count on all of them."
+      ]
+    },
+
+    {
+      "tag": "Praise",
+      "patterns": [
+        "That was good"
+
+      ],
+      "responses": [
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": [
+        "What are my options?",
+        "What can I choose from?",
+        "Can you give me some choices?",
+        "What are my choices?",
+        "Can you help me?",
+        "I need help",
+        "help"
+      ],
+      "responses": [
+        "Certainly, here are some options: Click dog, click cat, or keep talking to me",
+        "You can choose from the following: Click dog, click cat, or keep talking to me.",
+        "There are several options available: Click dog, click cat, or keep talking to me"
       ]
     }
   ]
