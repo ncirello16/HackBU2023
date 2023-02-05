@@ -172,7 +172,22 @@
       ],
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
+        "What did the buffalo say when his son left for college? Bison.",
+        "My wife said I should do lunges to stay in shape. That would be a big step forward.",
+        "Singing in the shower is fun until you get soap in your mouth. Then it's a soap opera.",
+        "I asked my dog what's two minus two. He said nothing.",
+        "Why can't a nose be 12 inches long? Because then it would be a foot.",
+        "Shout out to my fingers. I can count on all of them."
+      ]
+    },
+
+    {
+      "tag": "Praise",
+      "patterns": [
+        "That was good"
+
+      ],
+      "responses": [
       ]
     },
     {
