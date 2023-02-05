@@ -9,7 +9,7 @@ from ui.chatBot import Ui_MainWindow
 import chat
 import find
 import diningAccountBot
-
+from multiprocessing.pool import ThreadPool
 
 # def take_input_and_output(input_prompt_text, output_location):
 #     app = QWidget.QApplication([])
@@ -150,27 +150,37 @@ class chatting(QMainWindow, Ui_MainWindow):
                 self.ps = True
 
             else:
-                try:
-                    ps = self.input_lineEdit.text()
-                    moneyLeft = diningAccountBot.parseBingWebpage(self.id,ps)
-                    ps = ""
-                    self.id = ""
-                    self.ps = False
-                    output = diningAccountBot.getMoneyPerDay(moneyLeft)
-                    self.input_lineEdit.setEchoMode(QLineEdit.Normal)
-                    output = f'You have {output[0]} money left on your account...\n' \
-                             f'You can spend "{output[1]}" a day\n---------------------\nPlease Type ID:'
-                    print(f'You have {output[0]} money left on your account...')
-                    print(f'You can spend "{output[1]}" a day\n---------------------\nPlease Type ID:')
-                    self.input_lineEdit.setPlaceholderText("Please Type ID:")
-                    self.output_lineEdit.append(output)
+                pool = ThreadPool(processes=3)
 
-                except:
-                    self.output_lineEdit.append("Something went to wrong...\n---------------------\nPlease Type ID:")
-                    self.input_lineEdit.setPlaceholderText("Please Type ID:")
-                    self.ps = False
-                    self.input_lineEdit.setEchoMode(QLineEdit.Normal)
 
+                pool.apply_async(self.work, (self.id,inp))
+                self.output_lineEdit.append("Getting an output...\nPlease Wait\n-------------------------")
+
+
+
+
+    def work(self,id,ps):
+        try:
+
+            pool = ThreadPool(processes=3)
+            moneyLeft=diningAccountBot.parseBingWebpage(id,ps)
+            # moneyLeft = diningAccountBot.parseBingWebpage(self.id,ps)
+            ps = ""
+            self.id = ""
+            self.ps = False
+            output = diningAccountBot.getMoneyPerDay(moneyLeft)
+            self.input_lineEdit.setEchoMode(QLineEdit.Normal)
+            output = f'You have {output[0]} money left on your account...\n' \
+                     f'You can spend "{output[1]}" a day\n-------------------------\nPlease Type ID:'
+            print(f'You have {output[0]} money left on your account...')
+            print(f'You can spend "{output[1]}" a day\n-------------------------\nPlease Type ID:')
+            self.input_lineEdit.setPlaceholderText("Please Type ID:")
+            self.output_lineEdit.append(output)
+        except:
+            self.output_lineEdit.append("Something went to wrong...\n-------------------------\nPlease Type ID:")
+            self.input_lineEdit.setPlaceholderText("Please Type ID:")
+            self.ps = False
+            self.input_lineEdit.setEchoMode(QLineEdit.Normal)
 
     def playAudioFile(self, file):
 
@@ -207,6 +217,7 @@ class MyBar(QWidget):
         self.title = QLabel("Bot Hub")
         self.setStyleSheet("background-color: rgb(47, 49, 54);")
         btn_size = 35
+        self.max = False
 
         self.pushButton_3 = QPushButton("x")
         self.pushButton_3.clicked.connect(self.btn_close_clicked)
