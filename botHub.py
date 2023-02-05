@@ -217,6 +217,7 @@ class MyBar(QWidget):
         self.title = QLabel("Bot Hub")
         self.setStyleSheet("background-color: rgb(47, 49, 54);")
         btn_size = 35
+        self.goback = False
         self.max = False
 
         self.pushButton_3 = QPushButton("x")
@@ -278,7 +279,18 @@ class MyBar(QWidget):
         self.parent.close()
 
     def btn_max_clicked(self):
-        self.parent.showMaximized()
+        if(self.goback == False):
+            self.total = [self.parent.height(),self.parent.width()]
+            self.goback = True
+            self.parent.showMaximized()
+        else:
+            self.btn_back_clicked()
+
+    def btn_back_clicked(self):
+        self.parent.setFixedHeight(self.total[0])
+        self.parent.setFixedWidth(self.total[1])
+        self.goback = False
+
 
     def btn_min_clicked(self):
         self.parent.showMinimized()  # self.parent.showMinimized()
