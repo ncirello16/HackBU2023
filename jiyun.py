@@ -49,6 +49,7 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.human_switch.setEnabled(True)
         self.dic_switch.setEnabled(True)
         self.whichOne = "doggy"
+        self.output_lineEdit.clear()
 
     def cat(self):
         self.cat_swItch.setEnabled(False)
@@ -56,6 +57,7 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.human_switch.setEnabled(True)
         self.dic_switch.setEnabled(True)
         self.whichOne = "cat"
+        self.output_lineEdit.clear()
 
     def human(self):
         self.human_switch.setEnabled(False)
@@ -63,6 +65,7 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.cat_swItch.setEnabled(True)
         self.dic_switch.setEnabled(True)
         self.whichOne = "human"
+        self.output_lineEdit.clear()
 
     def dic(self):
         self.dic_switch.setEnabled(False)
@@ -70,6 +73,7 @@ class chatting(QMainWindow, Ui_MainWindow):
         self.cat_swItch.setEnabled(True)
         self.human_switch.setEnabled(True)
         self.whichOne = "Dic"
+        self.output_lineEdit.clear()
     def take_input_and_output(self):
         inp = self.input_lineEdit.text()
         output = "You: "
